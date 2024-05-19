@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HistoryPage.css";
 import logoWhite from "../../Assets/Logo/logo-white.png";
 import lineWhite from "../../Assets/Images/lineWhite.png";
@@ -155,24 +156,45 @@ const HistoryPage = () => {
             <span className="span"> Price Prediction History</span>
           </p>
           <div className="navbar">
-            <img
-              className="logo-white-svg"
-              alt="Logo white svg"
-              src={logoWhite}
-            />
+            <Link to="/">
+              <img
+                className="logo-white-svg"
+                alt="Logo white svg"
+                src={logoWhite}
+              />
+            </Link>
             <div className="overlap-group-2">
               <div className="list">
                 <div className="item-link">
-                  <div className="text-wrapper-15">Home</div>
+                  <Link
+                    to="/"
+                    style={{ textDecoration: "none" }}
+                    className="text-wrapper-15"
+                  >
+                    Home
+                  </Link>
                 </div>
                 <div className="item-link-2">
-                  <div className="text-wrapper-16">Predict Price</div>
+                  <Link
+                    to="/predict-price"
+                    style={{ textDecoration: "none" }}
+                    iv
+                    className="text-wrapper-16"
+                  >
+                    Predict Price
+                  </Link>
                 </div>
                 <div className="item-link-3">
                   <div className="text-wrapper-17">Categories</div>
                 </div>
                 <div className="item-link-4">
-                  <div className="text-wrapper-18">History</div>
+                  <Link
+                    to="/history"
+                    style={{ textDecoration: "none" }}
+                    className="text-wrapper-18"
+                  >
+                    History
+                  </Link>
                 </div>
                 <div className="item-link-5">
                   <div className="text-wrapper-19">Contact</div>
