@@ -11,15 +11,7 @@ import product1 from "../../Assets/Images/product1.png";
 import product2 from "../../Assets/Images/product2.png";
 import product3 from "../../Assets/Images/product3.png";
 import product4 from "../../Assets/Images/product4.png";
-import bathTubIcon from "../../Assets/Icons/bathTubIconBlack.png";
-import bedIcon from "../../Assets/Icons/bedIconBlack.png";
-import locationIcon from "../../Assets/Icons/locationIconBlack.png";
-import boxIcon from "../../Assets/Icons/boxIconBlack.png";
-import buttonLeft from "../../Assets/Icons/leftButton.png";
-import buttonRight from "../../Assets/Icons/rightButton.png";
-import likeButton from "../../Assets/Icons/likeButton.png";
 import footer from "../../Assets/Images/Footer.png";
-import dropDownArrow from "../../Assets/Images/dropDownArrow.png";
 
 const HistoryPage = () => {
   return (
