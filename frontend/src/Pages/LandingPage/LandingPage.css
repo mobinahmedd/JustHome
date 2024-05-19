@@ -1864,7 +1864,7 @@
 
 .landing-page .button-3 {
   all: unset;
-  border: 1px solid;
+  border: 2px solid;
   border-color: #ffffff;
   border-radius: 50px;
   box-sizing: border-box;
@@ -1873,6 +1873,17 @@
   position: absolute;
   top: 50px;
   width: 148px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+
+.landing-page .button-3:hover {
+  background-color: white;
+}
+
+.landing-page .button-3:hover .text-wrapper-30 {
+  color: black;
 }
 
 .landing-page .text-wrapper-30 {
@@ -1889,4 +1900,5 @@
   top: 6px;
   white-space: nowrap;
   width: 89px;
+  transition: 0.3s all;
 }

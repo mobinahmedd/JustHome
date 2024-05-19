@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import bannerMain from "../../Assets/Images/bannerMain.png";
 import footer from "../../Assets/Images/Footer.png";
@@ -411,9 +412,9 @@ const LandingPage = () => {
               </div>
               <div className="phoneno">+92 349 7142343</div>
             </div>
-            <button className="button-3">
+            <Link to="/predict-price" className="button-3">
               <div className="text-wrapper-30">Predict Price</div>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
