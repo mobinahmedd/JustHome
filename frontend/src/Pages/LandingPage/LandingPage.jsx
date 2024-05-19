@@ -14,6 +14,8 @@ import bedIcon from "../../Assets/Icons/bedIcon.png";
 import locationIcon from "../../Assets/Icons/locationIcon.png";
 import boxIcon from "../../Assets/Icons/boxIcon.png";
 import arrowRightIcon from "../../Assets/Icons/arrowRightIcon.png";
+import HouseCard from "../../Components/Landing Page/HouseCard";
+import Categories from "../../Components/Landing Page/Categories";
 
 const LandingPage = () => {
   return (
@@ -81,188 +83,13 @@ const LandingPage = () => {
             <img className="SVG-2" alt="Svg" src={arrowRightIcon} />
           </button>
           <div className="properties-list">
-            <div className="article">
-              <div className="overlap">
-                <div className="overlap-group-wrapper">
-                  <div className="overlap-group-3">
-                    <div className="before-wrapper">
-                      <div className="before" />
-                    </div>
-                    <div className="for-sale-wrapper">
-                      <div className="for-sale">FOR SALE</div>
-                    </div>
-                    <div className="span-featured">
-                      <div className="featured">FEATURED</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="heading-link">Diamond Manor Apartment</div>
-                <img className="icon" alt="Icon" src={locationIcon} />
-                <div className="link-ave">7802 20th Ave, Brooklyn</div>
-                <div className="div-property-meta">
-                  <img className="icon-2" alt="Icon" src={bedIcon} />
-                  <div className="text-wrapper-9">4</div>
-                </div>
-                <div className="div-property-meta-2">
-                  <img className="icon-2" alt="Icon" src={bathTubIcon} />
-                  <div className="text-wrapper-9">2</div>
-                </div>
-                <img className="icon-3" alt="Icon" src={boxIcon} />
-                <div className="text-wrapper-10">500</div>
-                <div className="text-wrapper-11">$259,000</div>
-              </div>
-            </div>
-            <div className="overlap-wrapper">
-              <div className="overlap">
-                <div className="overlap-group-wrapper">
-                  <div className="overlap-group-3">
-                    <div className="div-wrapper">
-                      <div className="before" />
-                    </div>
-                    <div className="for-rent-wrapper">
-                      <div className="for-rent">FOR RENT</div>
-                    </div>
-                    <div className="featured-wrapper">
-                      <div className="featured">FEATURED</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="heading-link-new">New Apartment Nice Wiew</div>
-                <img className="icon" alt="Icon" src={locationIcon} />
-                <div className="link-avenue-o">42 Avenue O, Brooklyn</div>
-                <div className="div-property-meta">
-                  <img className="icon-2" alt="Icon" src={bedIcon} />
-                  <div className="text-wrapper-9">4</div>
-                </div>
-                <div className="div-property-meta-2">
-                  <img className="icon-2" alt="Icon" src={bathTubIcon} />
-                  <div className="text-wrapper-9">1</div>
-                </div>
-                <img className="icon-3" alt="Icon" src={boxIcon} />
-                <div className="text-wrapper-10">460</div>
-                <div className="text-wrapper-12">$850</div>
-                <div className="text-wrapper-13">/month</div>
-              </div>
-            </div>
-            <div className="article-2">
-              <div className="overlap">
-                <div className="overlap-group-wrapper">
-                  <div className="overlap-group-3">
-                    <div className="link-3">
-                      <div className="before" />
-                    </div>
-                    <div className="for-sale-wrapper">
-                      <div className="for-sale">FOR SALE</div>
-                    </div>
-                    <div className="span-featured">
-                      <div className="featured">FEATURED</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="text-wrapper-14">Eaton Garth Penthouse</div>
-                <img className="icon" alt="Icon" src={locationIcon} />
-                <div className="link-ave">7722 18th Ave, Brooklyn</div>
-                <div className="div-property-meta">
-                  <img className="icon-2" alt="Icon" src={bedIcon} />
-                  <div className="text-wrapper-9">4</div>
-                </div>
-                <div className="div-property-meta-2">
-                  <img className="icon-2" alt="Icon" src={bathTubIcon} />
-                  <div className="text-wrapper-9">2</div>
-                </div>
-                <img className="icon-3" alt="Icon" src={boxIcon} />
-                <div className="text-wrapper-10">450</div>
-                <div className="text-wrapper-11">$180,000</div>
-              </div>
-            </div>
-            <div className="article-3">
-              <div className="overlap">
-                <div className="overlap-group-wrapper">
-                  <div className="overlap-group-3">
-                    <div className="link-4">
-                      <div className="before" />
-                    </div>
-                    <div className="for-rent-wrapper">
-                      <div className="for-rent">FOR RENT</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="heading-link-north">North Dillard Street</div>
-                <img className="icon" alt="Icon" src={locationIcon} />
-                <div className="link-bell">4330 Bell Shoals Rd</div>
-                <div className="div-property-meta">
-                  <img className="icon-2" alt="Icon" src={bedIcon} />
-                  <div className="text-wrapper-9">4</div>
-                </div>
-                <div className="div-property-meta-2">
-                  <img className="icon-2" alt="Icon" src={bathTubIcon} />
-                  <div className="text-wrapper-9">2</div>
-                </div>
-                <img className="icon-3" alt="Icon" src={boxIcon} />
-                <div className="text-wrapper-10">400</div>
-                <div className="text-wrapper-12">$250</div>
-                <div className="text-wrapper-13">/month</div>
-              </div>
-            </div>
-            <div className="article-4">
-              <div className="overlap">
-                <div className="overlap-group-wrapper">
-                  <div className="overlap-group-3">
-                    <div className="link-5">
-                      <div className="before" />
-                    </div>
-                    <div className="for-sale-wrapper">
-                      <div className="for-sale">FOR SALE</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="text-wrapper-14">Skyper Pool Apartment</div>
-                <img className="icon" alt="Icon" src={locationIcon} />
-                <div className="link-6">1020 Bloomingdale Ave</div>
-                <div className="div-property-meta">
-                  <img className="icon-2" alt="Icon" src={bedIcon} />
-                  <div className="text-wrapper-9">4</div>
-                </div>
-                <div className="div-property-meta-2">
-                  <img className="icon-2" alt="Icon" src={bathTubIcon} />
-                  <div className="text-wrapper-9">2</div>
-                </div>
-                <img className="icon-3" alt="Icon" src={boxIcon} />
-                <div className="text-wrapper-10">450</div>
-                <div className="text-wrapper-11">$280,000</div>
-              </div>
-            </div>
-            <div className="overlap-group-wrapper">
-              <div className="overlap">
-                <div className="overlap-group-wrapper">
-                  <div className="overlap-group-3">
-                    <div className="link-7">
-                      <div className="before" />
-                    </div>
-                    <div className="for-sale-wrapper">
-                      <div className="for-sale">FOR SALE</div>
-                    </div>
-                    <div className="span-featured">
-                      <div className="featured">FEATURED</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="heading-link-2">Luxury Family Home</div>
-                <img className="icon" alt="Icon" src={locationIcon} />
-                <div className="link-th">1800-1818 79th St</div>
-                <div className="div-property-meta">
-                  <img className="icon-2" alt="Icon" src={bedIcon} />
-                  <div className="text-wrapper-9">4</div>
-                </div>
-                <div className="div-property-meta-2">
-                  <img className="icon-2" alt="Icon" src={bathTubIcon} />
-                  <div className="text-wrapper-9">1</div>
-                </div>
-                <img className="icon-3" alt="Icon" src={boxIcon} />
-                <div className="text-wrapper-10">400</div>
-                <div className="text-wrapper-11">$395,000</div>
-              </div>
-            </div>
+            {/* HERE */}
+            <HouseCard />
+            <HouseCard />
+            <HouseCard />
+            <HouseCard />
+            <HouseCard />
+            <HouseCard />
           </div>
           <div className="list">
             <div className="item-link">
@@ -280,36 +107,13 @@ const LandingPage = () => {
         </div>
         <div className="areas-categories">
           <div className="categories">
-            <div className="link-8">
-              <div className="overlap-group-4">
-                <div className="heading-new-york">New York</div>
-                <div className="text-wrapper-17">8 Properties</div>
-              </div>
-            </div>
-            <div className="link-9">
-              <div className="overlap-group-4">
-                <div className="heading-chicago">Chicago</div>
-                <div className="text-wrapper-17">2 Properties</div>
-              </div>
-            </div>
-            <div className="link-10">
-              <div className="overlap-group-4">
-                <div className="heading-los">Los Angeles</div>
-                <div className="text-wrapper-18">1 Property</div>
-              </div>
-            </div>
-            <div className="link-11">
-              <div className="overlap-group-4">
-                <div className="heading-miami">Miami</div>
-                <div className="text-wrapper-17">2 Properties</div>
-              </div>
-            </div>
-            <div className="link-12">
-              <div className="overlap-group-4">
-                <div className="text-wrapper-19">Florida</div>
-                <div className="text-wrapper-17">3 Properties</div>
-              </div>
-            </div>
+            <Categories />
+            <Categories />
+            <Categories />
+            <Categories />
+            <Categories />
+            <Categories />
+            <Categories />
           </div>
           <div className="overlap-2">
             <p className="explore-the">
