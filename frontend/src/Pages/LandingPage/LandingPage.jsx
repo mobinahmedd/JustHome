@@ -60,10 +60,10 @@ const LandingPage = () => {
         </div>
         <div className="predict-price">
           <div className="group-3">
-            <div className="link-2">
+            <Link to="/predict-price" className="link-2">
               <div className="text-wrapper-7">Predict Price</div>
               <img className="img" alt="Svg" src={arrowRightIcon} />
-            </div>
+            </Link>
             <div className="overlap-group-2">
               <div className="heading">
                 <p className="p">Predict the Price of your Property</p>
@@ -393,13 +393,25 @@ const LandingPage = () => {
                 <div className="text-wrapper-25">Home</div>
               </div>
               <div className="item-link-3">
-                <div className="text-wrapper-26">Predict Price</div>
+                <Link
+                  to="/predict-price"
+                  style={{ textDecoration: "none" }}
+                  className="text-wrapper-26"
+                >
+                  Predict Price
+                </Link>
               </div>
               <div className="item-link-4">
                 <div className="text-wrapper-27">Categories</div>
               </div>
               <div className="item-link-5">
-                <div className="text-wrapper-28">History</div>
+                <Link
+                  to="/history"
+                  style={{ textDecoration: "none" }}
+                  className="text-wrapper-28"
+                >
+                  History
+                </Link>
               </div>
               <div className="item-link-6">
                 <div className="text-wrapper-29">Contact</div>

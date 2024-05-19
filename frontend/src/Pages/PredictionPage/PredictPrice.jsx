@@ -1,7 +1,6 @@
 import React from "react";
 import "./PredictPrice.css";
 import logoWhite from "../../Assets/Logo/logo-white.png";
-import greenBg from "../../Assets/Images/green-bg.png";
 import lineWhite from "../../Assets/Images/lineWhite.png";
 import phoneIcon from "../../Assets/Icons/phoneIcon.png";
 import arrowRightCream from "../../Assets/Icons/arrowRightCream.png";

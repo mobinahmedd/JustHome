@@ -279,6 +279,7 @@
   position: absolute;
   top: 256px;
   width: 191px;
+  transition: 0.3s all;
 }
 
 .landing-page .text-wrapper-7 {
@@ -1901,4 +1902,8 @@
   white-space: nowrap;
   width: 89px;
   transition: 0.3s all;
+}
+
+.link-2:hover {
+  background-color: rgb(139, 133, 133);
 }
