@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./PredictPrice.css";
 import logoWhite from "../../Assets/Logo/logo-white.png";
 import lineWhite from "../../Assets/Images/lineWhite.png";
@@ -285,14 +286,22 @@ const PredictPrice = () => {
             </div>
           </div>
           <div className="navbar">
-            <img
-              className="logo-white-svg"
-              alt="Logo white svg"
-              src={logoWhite}
-            />
+            <Link to="/">
+              <img
+                className="logo-white-svg"
+                alt="Logo white svg"
+                src={logoWhite}
+              />
+            </Link>
             <div className="list-4">
               <div className="item-link">
-                <div className="text-wrapper-22">Home</div>
+                <Link
+                  to="/"
+                  style={{ textDecoration: "none" }}
+                  className="text-wrapper-22"
+                >
+                  Home
+                </Link>
               </div>
               <div className="item-link-2">
                 <div className="text-wrapper-23">Predict Price</div>
@@ -302,7 +311,13 @@ const PredictPrice = () => {
                 <div className="text-wrapper-24">Categories</div>
               </div>
               <div className="item-link-4">
-                <div className="text-wrapper-25">History</div>
+                <Link
+                  to="/history"
+                  style={{ textDecoration: "none" }}
+                  className="text-wrapper-25"
+                >
+                  History
+                </Link>
               </div>
               <div className="item-link-5">
                 <div className="text-wrapper-26">Contact</div>

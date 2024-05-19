@@ -1904,6 +1904,6 @@
   transition: 0.3s all;
 }
 
-.link-2:hover {
+.landing-page .link-2:hover {
   background-color: rgb(139, 133, 133);
 }
