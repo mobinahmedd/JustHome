@@ -397,11 +397,18 @@
 }
 
 .landing-page .properties-list {
-  height: 923px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, auto);
+  gap: 2px;
+  row-gap: 20px;
+  /* overflow-x: auto; */
+  overflow-y: auto;
+  min-height: 923px;
   left: 0;
   position: absolute;
-  top: 210px;
-  width: 1400px;
+  top: 18%;
+  max-width: 1800px;
 }
 
 .landing-page .article {
@@ -425,9 +432,15 @@
   height: 447px;
   left: 0;
   overflow: hidden;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   width: 447px;
+  margin-right: 0px;
+  padding-right: 1 0px;
+}
+
+.landing-page .overlap-group-wrapper-1 {
+  margin-right: 30px;
 }
 
 .landing-page .overlap-group-3 {
@@ -1025,14 +1038,17 @@
   left: 54px;
   position: absolute;
   top: 1176px;
-  width: 1434px;
+  max-width: 1434px;
 }
 
 .landing-page .categories {
-  height: 319px;
-  left: 0;
-  position: absolute;
-  top: 120px;
+  height: 339px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-top: 9%;
   width: 1430px;
 }
 
@@ -1044,8 +1060,11 @@
   height: 319px;
   left: 15px;
   overflow: hidden;
-  position: absolute;
-  top: 0;
+  /* position: absolute; */
+  /* margin-top: 40%; */
+  margin-right: 20px;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
   width: 256px;
 }
 
