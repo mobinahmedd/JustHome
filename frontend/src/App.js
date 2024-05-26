@@ -4,6 +4,7 @@ import PredictPrice from "./Pages/PredictionPage/PredictPrice";
 import HistoryPage from "./Pages/HistoryPage/HistoryPage";
 import Property from "./Pages/PropertyDescriptionPage/Property";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Theme } from "@radix-ui/themes";
 
 function App() {
   const [pricePredictionHistory, setPricePredictionHistory] = useState([]);
@@ -11,13 +12,22 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/"
+          element={
+            <Theme accentColor="gray" scaling="110%" appearance="dark">
+              <LandingPage />
+            </Theme>
+          }
+        />
         <Route
           path="/predict-price"
           element={
-            <PredictPrice
-              setPricePredictionHistory={setPricePredictionHistory}
-            />
+            <Theme accentColor="jade" scaling="110%">
+              <PredictPrice
+                setPricePredictionHistory={setPricePredictionHistory}
+              />
+            </Theme>
           }
         />
         <Route

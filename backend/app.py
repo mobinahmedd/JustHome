@@ -79,14 +79,32 @@ def get_entries_by_area_type():
 
     return jsonify({'entries': entries})
 
-# # Serve React static files
-# @app.route('/', defaults={'path': ''})
-# @app.route('/<path:path>')
-# def serve(path):
-#     if path != '' and os.path.exists(os.path.join(app.static_folder, path)):
-#         return send_from_directory(app.static_folder, path)
-#     else:
-#         return send_from_directory(app.static_folder, 'index.html')
+@app.route('/api/get_properties', methods=['POST'])
+@cross_origin()
+def get_properties():
+    location = request.form.get('location')
+    area = request.form.get('area')
+    availability = request.form.get('availability')
+
+    # Start with the full dataset
+    filtered_data = housing_data.copy()
+
+    # Apply filters based on provided attributes
+    if location:
+        filtered_data = filtered_data[filtered_data['location'] == location]
+    if area:
+        filtered_data = filtered_data[filtered_data['area_type'] == area]
+    if availability:
+        filtered_data = filtered_data[filtered_data['availability'] == availability]
+
+    # If no filters are provided, return a random sample of 100 properties
+    if not location and not area and not availability:
+        filtered_data = housing_data.sample(n=100)
+
+    # Convert the filtered data to a list of dictionaries
+    entries = filtered_data.to_dict(orient='records')
+
+    return jsonify({'entries': entries})
 
 if __name__ == "__main__":
     tm.load_saved_attributes()

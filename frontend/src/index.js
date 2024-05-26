@@ -6,8 +6,4 @@ import { Theme } from "@radix-ui/themes";
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <Theme accentColor="jade" scaling="110%">
-    <App />
-  </Theme>
-);
+root.render(<App />);

@@ -1,24 +1,114 @@
-import React from "react";
+import React, { useEffect, useState, useMemo } from "react";
+import axios from "axios";
+import { Select } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import bannerMain from "../../Assets/Images/bannerMain.png";
 import footer from "../../Assets/Images/Footer.png";
 import lineWhite from "../../Assets/Images/lineWhite.png";
-import dropDownArrow from "../../Assets/Images/dropDownArrow.png";
 import logoWhite from "../../Assets/Logo/logo-white.png";
 import phoneIcon from "../../Assets/Icons/phoneIcon.png";
 import propertyIcon1 from "../../Assets/Icons/propertyIcon1.png";
 import homeIcon1 from "../../Assets/Icons/homeIcon1.png";
 import trustIcon from "../../Assets/Icons/trustIcon.png";
-import bathTubIcon from "../../Assets/Icons/bathTubIcon.png";
-import bedIcon from "../../Assets/Icons/bedIcon.png";
-import locationIcon from "../../Assets/Icons/locationIcon.png";
-import boxIcon from "../../Assets/Icons/boxIcon.png";
 import arrowRightIcon from "../../Assets/Icons/arrowRightIcon.png";
 import HouseCard from "../../Components/LandingPage/HouseCard";
 import Categories from "../../Components/LandingPage/Categories";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 const LandingPage = () => {
+  const [locations, setLocations] = useState([]);
+  const [areas, setAreas] = useState([]);
+  const [availabilities, setAvailabilities] = useState([]);
+  const [properties, setProperties] = useState([]);
+  const [formData, setFormData] = useState({
+    location: "",
+    area: "",
+    availability: "",
+  });
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const propertiesPerPage = 6;
+
+  const handleCategoryClick = async (category) => {
+    setFormData((prev) => ({ ...prev, location: category }));
+    fetchProperties();
+  };
+
+  const fetchProperties = async () => {
+    try {
+      const response = await axios.post(
+        "https://jawad-mohsin-just-home.hf.space/api/get_properties",
+        new URLSearchParams({
+          location: formData.location,
+          area: formData.area,
+          availability: formData.availability,
+        })
+      );
+      setProperties(response.data.entries || []);
+    } catch (error) {
+      console.error("Error fetching properties:", error);
+    }
+  };
+
+  const handleSearch = () => {
+    fetchProperties();
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [locationRes, areaRes, availabilityRes] = await Promise.all([
+          axios.get(
+            "https://jawad-mohsin-just-home.hf.space/api/get_location_names"
+          ),
+          axios.get(
+            "https://jawad-mohsin-just-home.hf.space/api/get_area_names"
+          ),
+          axios.get(
+            "https://jawad-mohsin-just-home.hf.space/api/get_availability_names"
+          ),
+        ]);
+
+        setLocations(locationRes.data.locations || []);
+        setAreas(areaRes.data.area || []);
+        setAvailabilities(availabilityRes.data.availability || []);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+    fetchProperties();
+  }, []);
+
+  const memoizedLocations = useMemo(() => locations, [locations]);
+  const memoizedAreas = useMemo(() => areas, [areas]);
+  const memoizedAvailabilities = useMemo(
+    () => availabilities,
+    [availabilities]
+  );
+
+  const handlePageChange = (event, value) => {
+    setCurrentPage(value);
+  };
+
+  const indexOfLastProperty = currentPage * propertiesPerPage;
+  const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
+  const currentProperties = properties.slice(
+    indexOfFirstProperty,
+    indexOfLastProperty
+  );
+
+  // Shuffle locations array and take first 5 items
+  const shuffledLocations = useMemo(() => {
+    const shuffled = locations.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 5);
+  }, [locations]);
+
+  console.log(properties);
+  console.log(formData);
   return (
     <div className="landing-page">
       <div className="div">
@@ -79,26 +169,42 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="featured-properties">
-          <button className="button">
+          {properties.length > 0 && (
+            <div style={{ position: "absolute", left: "600px", top: "1200px" }}>
+              <Stack spacing={2}>
+                <Pagination
+                  count={Math.ceil(properties.length / propertiesPerPage)}
+                  variant="outlined"
+                  shape="rounded"
+                  page={currentPage}
+                  onChange={handlePageChange}
+                />
+              </Stack>
+            </div>
+          )}
+          {/* <button className="button">
             <div className="text-wrapper-8">See All Listing</div>
             <img className="SVG-2" alt="Svg" src={arrowRightIcon} />
-          </button>
-          <div className="properties-list">
-            {/* HERE */}
-            <HouseCard />
-            <HouseCard />
-            <HouseCard />
-            <HouseCard />
-            <HouseCard />
-            <HouseCard />
+          </button> */}
+          <div className="properties-list" style={{ overflow: "hidden" }}>
+            {currentProperties.length > 0 ? (
+              currentProperties.map((property, index) => (
+                <HouseCard key={index} id={index} property={property} />
+              ))
+            ) : (
+              <h1
+                style={{
+                  color: "black",
+                }}
+              >
+                No Properties Found
+              </h1>
+            )}
           </div>
           <div className="list">
             <div className="item-link">
               <div className="text-wrapper-15">All Properties</div>
             </div>
-            <div className="item-link-villa">Villa</div>
-            <div className="item-link-apartments">Apartments</div>
-            <div className="item-link-office">Office</div>
           </div>
           <p className="discover-our">
             &#34;Discover our handpicked selection of premier properties,
@@ -108,13 +214,14 @@ const LandingPage = () => {
         </div>
         <div className="areas-categories">
           <div className="categories">
-            <Categories />
-            <Categories />
-            <Categories />
-            <Categories />
-            <Categories />
-            <Categories />
-            <Categories />
+            {shuffledLocations.map((category, index) => (
+              <Categories
+                key={index}
+                id={index}
+                category={category}
+                onClick={handleCategoryClick}
+              />
+            ))}
           </div>
           <div className="overlap-2">
             <p className="explore-the">
@@ -159,30 +266,71 @@ const LandingPage = () => {
           <img className="banner-main" alt="Banner main" src={bannerMain} />
           <div className="search-bar">
             <div className="div-list-item">
-              <div className="label-keyword">Area</div>
+              <div className="label-keyword">Location</div>
               <div className="input-wrapper">
-                <div className="input">
-                  <div className="text-wrapper-21">Enter Keyword</div>
-                </div>
+                <Select.Root
+                  onValueChange={(value) =>
+                    setFormData((prev) => ({ ...prev, location: value }))
+                  }
+                >
+                  <Select.Trigger
+                    placeholder="Select Location"
+                    style={{ width: "100%" }}
+                  />
+                  <Select.Content>
+                    {memoizedLocations.map((location) => (
+                      <Select.Item key={location} value={location}>
+                        {location}
+                      </Select.Item>
+                    ))}
+                  </Select.Content>
+                </Select.Root>
               </div>
             </div>
             <div className="div-list-item-2">
               <div className="combobox-menu-wrapper">
-                <div className="combobox-menu">
-                  <div className="text-wrapper-22">All Status</div>
-                  <img src={dropDownArrow} className="presentation" />
-                </div>
+                <Select.Root
+                  onValueChange={(value) =>
+                    setFormData((prev) => ({ ...prev, availability: value }))
+                  }
+                >
+                  <Select.Trigger
+                    placeholder="Select Availability"
+                    style={{ width: "100%" }}
+                    backgroundColor="rgb(255 255 255)"
+                  />
+                  <Select.Content>
+                    {memoizedAvailabilities.map((availability) => (
+                      <Select.Item key={availability} value={availability}>
+                        {availability}
+                      </Select.Item>
+                    ))}
+                  </Select.Content>
+                </Select.Root>
               </div>
               <div className="label-status">Availability</div>
             </div>
             <div className="label-type">Area-Type</div>
             <div className="overlap-4">
-              <div className="combobox-menu-2">
-                <div className="text-wrapper-23">All Type</div>
-                <img src={dropDownArrow} className="presentation" />
-              </div>
+              <Select.Root
+                onValueChange={(value) =>
+                  setFormData((prev) => ({ ...prev, area: value }))
+                }
+              >
+                <Select.Trigger
+                  placeholder="Select Area"
+                  style={{ width: "100%" }}
+                />
+                <Select.Content>
+                  {memoizedAreas.map((area) => (
+                    <Select.Item key={area} value={area}>
+                      {area}
+                    </Select.Item>
+                  ))}
+                </Select.Content>
+              </Select.Root>
             </div>
-            <button className="button-2">
+            <button className="button-2" onClick={handleSearch}>
               <div className="text-wrapper-24">Search</div>
             </button>
           </div>
