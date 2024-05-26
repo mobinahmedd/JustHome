@@ -23,19 +23,23 @@
 }
 
 .history-page .products {
-  height: 769px;
+  height: 869px;
   left: 36px;
   position: absolute;
   top: 214px;
-  width: 1408px;
+  max-width: 1408px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-right: 50px;
 }
 
 .history-page .item {
   height: 169px;
   left: 3px;
-  position: absolute;
+  position: relative;
   top: 0;
   width: 1409px;
+  margin-bottom: 50px;
 }
 
 .history-page .divider {
@@ -150,7 +154,7 @@
   font-family: "Poppins-Regular", Helvetica;
   font-size: 18px;
   font-weight: 400;
-  left: 607px;
+  left: 650px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -177,11 +181,11 @@
 }
 
 .history-page .overlap-group {
-  background-color: #c1fcc3;
+  background-color: #ffd3d0;
   border-radius: 50px;
   height: 40px;
   position: relative;
-  width: 180px;
+  width: 195px;
 }
 
 .history-page .text-wrapper-7 {
@@ -189,12 +193,12 @@
   font-family: "Poppins-Regular", Helvetica;
   font-size: 18px;
   font-weight: 400;
-  left: 26px;
+  left: 20px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   top: 10px;
-  width: 137px;
+  width: 200px;
 }
 
 .history-page .del {
@@ -419,7 +423,7 @@
   font-family: "Poppins-Medium", Helvetica;
   font-size: 20px;
   font-weight: 500;
-  left: 1109px;
+  left: 1125px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -432,7 +436,7 @@
   font-family: "Poppins-Medium", Helvetica;
   font-size: 20px;
   font-weight: 500;
-  left: 856px;
+  left: 868px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
