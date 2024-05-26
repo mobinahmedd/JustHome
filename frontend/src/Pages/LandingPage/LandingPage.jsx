@@ -15,8 +15,8 @@ import bedIcon from "../../Assets/Icons/bedIcon.png";
 import locationIcon from "../../Assets/Icons/locationIcon.png";
 import boxIcon from "../../Assets/Icons/boxIcon.png";
 import arrowRightIcon from "../../Assets/Icons/arrowRightIcon.png";
-import HouseCard from "../../Components/Landing Page/HouseCard";
-import Categories from "../../Components/Landing Page/Categories";
+import HouseCard from "../../Components/LandingPage/HouseCard";
+import Categories from "../../Components/LandingPage/Categories";
 
 const LandingPage = () => {
   return (

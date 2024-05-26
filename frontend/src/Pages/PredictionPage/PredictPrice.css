@@ -628,11 +628,14 @@
 }
 
 .price-prediction .similar-properties {
+  display: flex;
+  justify-content: left;
+  align-items: center;
   height: 489px;
   left: 14px;
-  position: absolute;
-  top: 0;
-  width: 1430px;
+  position: relative;
+  max-width: 1430px;
+  /* overflow-x: scroll; */
 }
 
 .price-prediction .tabpanel-article {
@@ -643,22 +646,23 @@
   height: 459px;
   left: 15px;
   overflow: hidden;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   width: 328px;
+  margin-right: 25px;
 }
 
 .price-prediction .heading-link-new {
   color: #1a1a1a;
   font-family: "Roboto-Medium", Helvetica;
   font-size: 19px;
-  font-weight: 500;
+  font-weight: 600;
   height: 23px;
   left: 21px;
   letter-spacing: 0;
   line-height: 22.8px;
-  position: absolute;
-  top: 247px;
+  position: relative;
+  top: 240px;
   white-space: nowrap;
   width: 227px;
 }
@@ -666,8 +670,8 @@
 .price-prediction .icon {
   height: 16px;
   left: 21px;
-  position: absolute;
-  top: 284px;
+  position: relative;
+  top: 255px;
   width: 16px;
 }
 
@@ -680,8 +684,8 @@
   left: 46px;
   letter-spacing: 0;
   line-height: 28.5px;
-  position: absolute;
-  top: 277px;
+  position: relative;
+  top: 230px;
   white-space: nowrap;
   width: 148px;
 }
@@ -692,15 +696,15 @@
   border-radius: 36px;
   height: 35px;
   left: 21px;
-  position: absolute;
-  top: 322px;
+  position: relative;
+  top: 240px;
   width: 66px;
 }
 
 .price-prediction .icon-2 {
   height: 16px;
   left: 16px;
-  position: absolute;
+  position: relative;
   top: 8px;
   width: 16px;
 }
@@ -714,8 +718,8 @@
   left: 42px;
   letter-spacing: 0;
   line-height: 16.5px;
-  position: absolute;
-  top: 7px;
+  position: relative;
+  top: -14px;
   white-space: nowrap;
   width: 9px;
 }
@@ -726,8 +730,8 @@
   border-radius: 36px;
   height: 35px;
   left: 97px;
-  position: absolute;
-  top: 322px;
+  position: relative;
+  top: 203px;
   width: 66px;
 }
 
@@ -737,8 +741,8 @@
   border-radius: 36px;
   height: 35px;
   left: 173px;
-  position: absolute;
-  top: 322px;
+  position: relative;
+  top: 167px;
   width: 83px;
 }
 
@@ -748,11 +752,11 @@
   font-size: 15px;
   font-weight: 400;
   height: 16px;
-  left: 42px;
+  left: 40px;
   letter-spacing: 0;
   line-height: 16.5px;
-  position: absolute;
-  top: 7px;
+  position: relative;
+  top: -16px;
   white-space: nowrap;
   width: 26px;
 }
@@ -763,15 +767,15 @@
   border-top-width: 1px;
   height: 61px;
   left: 21px;
-  position: absolute;
-  top: 377px;
+  position: relative;
+  top: 177px;
   width: 286px;
 }
 
 .price-prediction .overlap-group-2 {
   height: 28px;
   left: 0;
-  position: absolute;
+  position: relative;
   top: 25px;
   width: 87px;
 }
@@ -780,12 +784,12 @@
   color: #eb664e;
   font-family: "Roboto-Medium", Helvetica;
   font-size: 19px;
-  font-weight: 500;
+  font-weight: 600;
   height: 28px;
   left: 0;
   letter-spacing: 0;
   line-height: 28.5px;
-  position: absolute;
+  position: relative;
   top: 0;
   white-space: nowrap;
   width: 44px;
@@ -800,8 +804,8 @@
   left: 43px;
   letter-spacing: 0;
   line-height: 20px;
-  position: absolute;
-  top: 6px;
+  position: relative;
+  top: -22px;
   white-space: nowrap;
   width: 44px;
 }
@@ -809,8 +813,8 @@
 .price-prediction .link {
   height: 40px;
   left: 246px;
-  position: absolute;
-  top: 21px;
+  position: relative;
+  top: 1px;
   width: 40px;
 }
 
@@ -818,11 +822,11 @@
   background-image: url(../../Assets/Images//property5.png);
   background-position: 50% 50%;
   background-size: cover;
+  background-repeat: no-repeat;
   height: 227px;
-  left: 1px;
-  position: absolute;
-  top: 1px;
-  width: 326px;
+  width: 100%;
+  margin-top: -250px;
+  position: relative;
 }
 
 .price-prediction .div-wrapper {
@@ -1087,9 +1091,9 @@
 
 .price-prediction .group-6 {
   height: 311px;
-  left: 0;
+  left: 42%;
   position: absolute;
-  top: 204px;
+  top: 490px;
   width: 1458px;
 }
 
@@ -1782,7 +1786,7 @@
 
 .custom .element {
   height: 34npmpx;
-  left: 52px;
+  left: 424px;
   position: absolute;
   top: 154px;
   width: 546px;
@@ -1804,8 +1808,8 @@
 }
 
 .custom .combobox {
-  background-color: #3b8671;
-  border-radius: 80px;
+  background-color: white;
+  border-radius: 4px;
   box-shadow: 0px 1px 4px #00000040;
   height: 32px;
   left: 262px;
@@ -1815,18 +1819,16 @@
 }
 
 .custom .combobox-menu {
-  height: 34px;
-  left: 8px;
+  height: 35px;
   position: relative;
-  top: 1px;
   width: 268px;
 }
 
 .custom .text-wrapper-2 {
-  color: #c5c5c5;
+  color: black !important;
   font-family: "Roboto-Regular", Helvetica;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 300;
   height: 28px;
   left: 5px;
   letter-spacing: 0;
@@ -1834,6 +1836,20 @@
   position: absolute;
   top: 0;
   white-space: nowrap;
+}
+
+.predict-price-input {
+  width: 100% !important;
+  border: none;
+  background-color: white;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  padding-left: 5px;
+  font-weight: 300;
+  outline: none; /* Add this line to remove the border when the input field is clicked */
+}
+.predict-price-input::placeholder {
+  color: gray !important; /* Add this line to set the placeholder font color to white */
 }
 
 .custom .presentation {
@@ -1873,6 +1889,8 @@
   position: absolute;
   top: 644px;
   width: 224px;
+  align-items: center;
+  text-align: center;
 }
 
 .custom .element-3 {
@@ -1917,6 +1935,16 @@
   position: absolute;
   top: 536px;
   width: 150px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.custom .button:hover {
+  background-color: #dcbf5f;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  transform: scale(1.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .custom .text-wrapper-3 {

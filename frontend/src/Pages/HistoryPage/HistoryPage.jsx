@@ -13,7 +13,8 @@ import product3 from "../../Assets/Images/product3.png";
 import product4 from "../../Assets/Images/product4.png";
 import footer from "../../Assets/Images/Footer.png";
 
-const HistoryPage = () => {
+const HistoryPage = ({ pricePredictionHistory }) => {
+  console.log("History Page : ", pricePredictionHistory);
   return (
     <div className="history-page">
       <div className="div">
@@ -138,7 +139,7 @@ const HistoryPage = () => {
             }}
           >
             <h1>Property Price Prediction History</h1>
-            <h2>4 Items</h2>
+            <h2>{pricePredictionHistory.length} Items</h2>
           </div>
         </div>
         <div className="main-image">
