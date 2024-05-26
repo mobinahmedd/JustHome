@@ -23,7 +23,10 @@ function App() {
         <Route
           path="/history"
           element={
-            <HistoryPage pricePredictionHistory={pricePredictionHistory} />
+            <HistoryPage
+              pricePredictionHistory={pricePredictionHistory}
+              setPricePredictionHistory={setPricePredictionHistory}
+            />
           }
         />
         <Route path="/property/:id" element={<Property />} />
