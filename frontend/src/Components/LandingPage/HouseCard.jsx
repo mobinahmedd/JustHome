@@ -1,6 +1,7 @@
 import React from "react";
 import bathTubIcon from "../../Assets/Icons/bathTubIcon.png";
 import bedIcon from "../../Assets/Icons/bedIcon.png";
+import { useNavigate } from "react-router-dom";
 import locationIcon from "../../Assets/Icons/locationIcon.png";
 import boxIcon from "../../Assets/Icons/boxIcon.png";
 import property1 from "../../Assets/Images/property1.png";
@@ -24,8 +25,14 @@ const getRandomImage = () => {
   return images[randomIndex];
 };
 
-const HouseCard = ({ id, property }) => {
+const HouseCard = ({ id, property, setPropertyData }) => {
   const randomImage = getRandomImage();
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    setPropertyData(property);
+    navigate(`/property/${id}`);
+  };
 
   return (
     <div className="overlap-group-wrapper-1">
@@ -34,6 +41,7 @@ const HouseCard = ({ id, property }) => {
           <div className="overlap-group-3">
             <div className="link-7">
               <div
+                onClick={handleButtonClick}
                 className="before"
                 style={{
                   backgroundImage: `url(${randomImage})`,
@@ -44,6 +52,7 @@ const HouseCard = ({ id, property }) => {
                   position: "absolute",
                   top: "0",
                   width: "447px",
+                  cursor: "pointer",
                 }}
               />
             </div>

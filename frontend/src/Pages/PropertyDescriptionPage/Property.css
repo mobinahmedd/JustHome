@@ -907,9 +907,9 @@
 
 .property-description .overlap-2 {
   height: 1424px;
-  left: 67px;
+  left: 19%;
   position: absolute;
-  top: 206px;
+  top: 100px;
   width: 1405px;
 }
 
@@ -988,9 +988,9 @@
 
 .property-description .text-wrapper-11 {
   height: 128px;
-  left: 3px;
+  margin-left: 19%;
   position: absolute;
-  top: 0;
+  margin-top: 7%;
   width: 1398px;
 }
 
@@ -1235,6 +1235,9 @@
   font-family: "Open Sans-Bold", Helvetica;
   font-size: 22px;
   font-weight: 700;
+  position: absolute;
+  left: 0px;
+  top: 30px;
 }
 
 .property-description .button-primary {
@@ -1290,7 +1293,7 @@
   line-height: 22px;
   opacity: 0.6;
   position: absolute;
-  top: 97px;
+  top: 80px;
   width: 700px;
 }
 
@@ -1354,7 +1357,7 @@
   align-items: center;
   display: flex;
   gap: 25px;
-  left: 159px;
+  left: 95px;
   position: absolute;
   top: 847px;
   width: 603px;
@@ -1422,7 +1425,7 @@
   background-size: 100% 100%;
   height: 52px;
   position: relative;
-  width: 138px;
+  width: 280px;
 }
 
 .property-description .text-wrapper-20 {
@@ -1435,7 +1438,7 @@
   line-height: 23.7px;
   position: absolute;
   top: 16px;
-  width: 78px;
+  width: 178px;
 }
 
 .property-description .element-2 {
@@ -1462,11 +1465,18 @@
 }
 
 .property-description .similar-properties {
-  height: 489px;
+  /* height: 489px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 1430px;
+  width: 1430px; */
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 489px;
+  left: 14px;
+  position: relative;
+  max-width: 1430px;
 }
 
 .property-description .tabpanel-article {
@@ -1477,9 +1487,10 @@
   height: 459px;
   left: 15px;
   overflow: hidden;
-  position: absolute;
+  position: relative;
   top: 0;
   width: 328px;
+  margin-right: 30px;
 }
 
 .property-description .heading-link-new {
@@ -1657,6 +1668,7 @@
   position: absolute;
   top: 1px;
   width: 326px;
+  cursor: pointer;
 }
 
 .property-description .link-3 {
@@ -1921,9 +1933,9 @@
 
 .property-description .tablist-wrapper {
   height: 60px;
-  left: 0;
+  left: 43%;
   position: absolute;
-  top: 455px;
+  top: 510px;
   width: 1430px;
 }
 

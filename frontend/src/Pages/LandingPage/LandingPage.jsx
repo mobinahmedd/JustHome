@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useRef } from "react";
 import axios from "axios";
 import { Select } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ import Categories from "../../Components/LandingPage/Categories";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
-const LandingPage = () => {
+const LandingPage = ({ setPropertyData }) => {
   const [locations, setLocations] = useState([]);
   const [areas, setAreas] = useState([]);
   const [availabilities, setAvailabilities] = useState([]);
@@ -30,6 +30,7 @@ const LandingPage = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const propertiesPerPage = 6;
+  const propertiesListRef = useRef(null);
 
   const handleCategoryClick = async (category) => {
     setFormData((prev) => ({ ...prev, location: category }));
@@ -54,6 +55,7 @@ const LandingPage = () => {
 
   const handleSearch = () => {
     fetchProperties();
+    propertiesListRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -168,7 +170,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="featured-properties">
+        <div ref={propertiesListRef} className="featured-properties">
           {properties.length > 0 && (
             <div style={{ position: "absolute", left: "600px", top: "1200px" }}>
               <Stack spacing={2}>
@@ -182,14 +184,15 @@ const LandingPage = () => {
               </Stack>
             </div>
           )}
-          {/* <button className="button">
-            <div className="text-wrapper-8">See All Listing</div>
-            <img className="SVG-2" alt="Svg" src={arrowRightIcon} />
-          </button> */}
           <div className="properties-list" style={{ overflow: "hidden" }}>
             {currentProperties.length > 0 ? (
               currentProperties.map((property, index) => (
-                <HouseCard key={index} id={index} property={property} />
+                <HouseCard
+                  key={index}
+                  id={index}
+                  property={property}
+                  setPropertyData={setPropertyData}
+                />
               ))
             ) : (
               <h1

@@ -8,6 +8,18 @@ import { Theme } from "@radix-ui/themes";
 
 function App() {
   const [pricePredictionHistory, setPricePredictionHistory] = useState([]);
+  const [propertyData, setPropertyData] = useState({
+    area_type: "",
+    availability: "",
+    bath: "",
+    bhk: "",
+    id: "",
+    location: "",
+    price: "",
+    sqft: "",
+  });
+
+  console.log("Jawad : ", propertyData);
 
   return (
     <BrowserRouter>
@@ -16,7 +28,7 @@ function App() {
           path="/"
           element={
             <Theme accentColor="gray" scaling="110%" appearance="dark">
-              <LandingPage />
+              <LandingPage setPropertyData={setPropertyData} />
             </Theme>
           }
         />
@@ -26,6 +38,7 @@ function App() {
             <Theme accentColor="jade" scaling="110%">
               <PredictPrice
                 setPricePredictionHistory={setPricePredictionHistory}
+                setPropertyData={setPropertyData}
               />
             </Theme>
           }
@@ -39,7 +52,15 @@ function App() {
             />
           }
         />
-        <Route path="/property/:id" element={<Property />} />
+        <Route
+          path="/property/:id"
+          element={
+            <Property
+              property={propertyData}
+              setPropertyData={setPropertyData}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
