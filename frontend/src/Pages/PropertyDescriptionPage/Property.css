@@ -988,10 +988,10 @@
 
 .property-description .text-wrapper-11 {
   height: 128px;
-  margin-left: 19%;
+  /* margin-right: 200px; */
   position: absolute;
   margin-top: 7%;
-  width: 1398px;
+  width: 920px;
 }
 
 .property-description .overlap-wrapper {

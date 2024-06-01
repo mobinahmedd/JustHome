@@ -128,7 +128,14 @@ const Product = ({ property, setPropertyData }) => {
                 <img className="foto-3" alt="Foto" src={apollo3} />
               </div>
             </div>
-            <h1 className="text-wrapper-11">
+            <h1
+              style={{
+                textAlign: "center",
+                position: "relative",
+                marginLeft: 0,
+              }}
+              className="text-wrapper-11"
+            >
               {property.area_type} - {property.location}
             </h1>
             <div className="group-16">

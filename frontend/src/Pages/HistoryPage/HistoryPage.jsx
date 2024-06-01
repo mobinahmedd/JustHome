@@ -88,7 +88,7 @@ const HistoryPage = ({ pricePredictionHistory, setPricePredictionHistory }) => {
               }}
             >
               <h1>Property Price Prediction History</h1>
-              <h2 style={{ position: "absolute", left: "1400px" }}>
+              <h2 style={{ position: "absolute", left: "1300px" }}>
                 {pricePredictionHistory.length} Items
               </h2>
             </div>
