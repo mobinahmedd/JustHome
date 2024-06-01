@@ -15,7 +15,7 @@ import Stack from "@mui/material/Stack";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
-const PredictPrice = ({ setPricePredictionHistory }) => {
+const PredictPrice = ({ setPricePredictionHistory, setPropertyData }) => {
   const [locations, setLocations] = useState([]);
   const [areas, setAreas] = useState([]);
   const [availabilities, setAvailabilities] = useState([]);
@@ -71,7 +71,7 @@ const PredictPrice = ({ setPricePredictionHistory }) => {
       const similarResponse = await axios.post(
         "https://jawad-mohsin-just-home.hf.space/api/get_houses_by_location",
         new URLSearchParams({
-          location: formData.location || "Whitefield",
+          location: formData.location || "Gunjur",
         })
       );
 
@@ -152,7 +152,11 @@ const PredictPrice = ({ setPricePredictionHistory }) => {
           <div className="overlap-2">
             <div className="similar-properties">
               {currentProperties.map((property) => (
-                <SimilarPropertyCard key={property.id} property={property} />
+                <SimilarPropertyCard
+                  key={property.id}
+                  property={property}
+                  setPropertyData={setPropertyData}
+                />
               ))}
             </div>
             <div className="group-6">

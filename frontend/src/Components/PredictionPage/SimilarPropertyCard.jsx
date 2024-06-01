@@ -1,12 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import bathTubIcon from "../../Assets/Icons/bathTubIconBlack.png";
 import bedIcon from "../../Assets/Icons/bedIconBlack.png";
 import locationIcon from "../../Assets/Icons/locationIconBlack.png";
 import boxIcon from "../../Assets/Icons/boxIconBlack.png";
 import likeButton from "../../Assets/Icons/likeButton.png";
-import { Link } from "react-router-dom";
 
-const SimilarPropertyCard = ({ property }) => {
+const SimilarPropertyCard = ({ property, setPropertyData }) => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    setPropertyData(property);
+    navigate(`/property/${property.id}`);
+  };
   return (
     <div className="tabpanel-article">
       <div className="heading-link-new">{property.area_type}</div>
@@ -30,9 +36,9 @@ const SimilarPropertyCard = ({ property }) => {
         </div>
         <img className="link" alt="Link" src={likeButton} />
       </div>
-      <Link to={`/property/${property.id}`}>
+      <div onClick={handleButtonClick} style={{ cursor: "pointer" }}>
         <div className="div-property" />
-      </Link>
+      </div>
     </div>
   );
 };
